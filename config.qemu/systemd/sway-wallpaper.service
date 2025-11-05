@@ -1,7 +1,7 @@
 [Unit]
 Description=Sway Wallpaper Daemon (runs 24/7)
-After=graphical-session.target
-PartOf=graphical-session.target
+# Note: This service is now started automatically by Sway config
+# It's kept here for manual control if needed
 
 [Service]
 Type=simple
@@ -9,7 +9,8 @@ ExecStart=%h/.local/bin/sway-wallpaper-daemon.sh
 Restart=always
 RestartSec=10
 Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
-Environment=DISPLAY=:0
+Environment=WAYLAND_DISPLAY=wayland-1
 
 [Install]
-WantedBy=default.target
+# Disabled auto-start - daemon is launched by Sway config instead
+# WantedBy=default.target
