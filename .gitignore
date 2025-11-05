@@ -1,8 +1,9 @@
 # Claude Code documentation - local development only
 CLAUDE.md
 
-# Node.js dependencies
+# AI CLI tools (local development only)
 node_modules/
+opencodetmp/
 
 # Log files
 *.log
