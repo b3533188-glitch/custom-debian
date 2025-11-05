@@ -171,7 +171,8 @@ apply_critical_sway_configurations() {
     if [ -d "$SCRIPT_DIR/../assets/wallpapers" ]; then
         info "Syncing wallpapers..."
         rm -rf "$USER_HOME/.config/wallpapers"
-        if cp -a "$SCRIPT_DIR/../assets/wallpapers" "$USER_HOME/.config/wallpapers"; then
+        mkdir -p "$USER_HOME/.config/wallpapers"
+        if cp -a "$SCRIPT_DIR/../assets/wallpapers"/. "$USER_HOME/.config/wallpapers"/; then
             chown -R "$SUDO_USER":"$SUDO_USER" "$USER_HOME/.config/wallpapers"
             # Verify wallpapers were copied successfully
             if [ -d "$USER_HOME/.config/wallpapers/day" ] && [ -d "$USER_HOME/.config/wallpapers/night" ]; then
@@ -389,7 +390,8 @@ finalize_configuration() {
                 if [ -d "$SCRIPT_DIR/../assets/wallpapers" ]; then
                     info "Syncing unified wallpapers..."
                     rm -rf "$USER_HOME/.config/wallpapers"
-                    if cp -a "$SCRIPT_DIR/../assets/wallpapers" "$USER_HOME/.config/wallpapers"; then
+                    mkdir -p "$USER_HOME/.config/wallpapers"
+                    if cp -a "$SCRIPT_DIR/../assets/wallpapers"/. "$USER_HOME/.config/wallpapers"/; then
                         chown -R "$SUDO_USER":"$SUDO_USER" "$USER_HOME/.config/wallpapers"
                         # Verify wallpapers were copied successfully
                         if [ -d "$USER_HOME/.config/wallpapers/day" ] && [ -d "$USER_HOME/.config/wallpapers/night" ]; then
@@ -1549,7 +1551,8 @@ verify_and_fix_wallpapers() {
 
         if [ -d "$REPO_DIR/assets/wallpapers" ]; then
             rm -rf "$USER_HOME/.config/wallpapers"
-            if cp -a "$REPO_DIR/assets/wallpapers" "$USER_HOME/.config/wallpapers"; then
+            mkdir -p "$USER_HOME/.config/wallpapers"
+            if cp -a "$REPO_DIR/assets/wallpapers"/. "$USER_HOME/.config/wallpapers"/; then
                 chown -R "$SUDO_USER":"$SUDO_USER" "$USER_HOME/.config/wallpapers"
 
                 # Verify the fix worked
@@ -1665,7 +1668,8 @@ force_update_sway_configs() {
         if [ -d "$REPO_DIR/assets/wallpapers" ]; then
             info "Syncing unified wallpapers..."
             rm -rf "$USER_HOME/.config/wallpapers"
-            if cp -a "$REPO_DIR/assets/wallpapers" "$USER_HOME/.config/wallpapers"; then
+            mkdir -p "$USER_HOME/.config/wallpapers"
+            if cp -a "$REPO_DIR/assets/wallpapers"/. "$USER_HOME/.config/wallpapers"/; then
                 chown -R "$SUDO_USER":"$SUDO_USER" "$USER_HOME/.config/wallpapers"
                 # Verify wallpapers were copied successfully
                 if [ -d "$USER_HOME/.config/wallpapers/day" ] && [ -d "$USER_HOME/.config/wallpapers/night" ]; then
