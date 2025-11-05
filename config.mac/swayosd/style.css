@@ -1,0 +1,17 @@
+#osd {
+    background-color: rgba(46, 52, 64, 0.9);
+    font-family: "JetBrains Mono", sans-serif;
+    border-radius: 10px;
+    border: 2px solid #d8dee9;
+}
+#osd image, #osd label {
+    color: #eceff4;
+}
+#osd trough {
+    background-color: #4c566a;
+    border-radius: 10px;
+}
+#osd progress {
+    background-color: #d8dee9;
+    border-radius: 10px;
+}

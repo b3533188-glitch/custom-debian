@@ -1,0 +1,35 @@
+#!/bin/bash
+# Sway session wrapper - ensures all environment variables are set
+
+# Wayland/Sway environment variables
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_DESKTOP=sway
+
+# Qt applications
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# Firefox/Mozilla
+export MOZ_ENABLE_WAYLAND=1
+
+# GTK applications
+export GDK_BACKEND=wayland
+export GTK_CSD=0
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libgtk3-nocsd.so.0
+
+# SDL applications
+export SDL_VIDEODRIVER=wayland
+
+# Clutter applications
+export CLUTTER_BACKEND=wayland
+
+# Java applications (fix for blank windows)
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Editor
+export EDITOR=nvim
+export VISUAL=nvim
+
+# Start Sway
+exec sway

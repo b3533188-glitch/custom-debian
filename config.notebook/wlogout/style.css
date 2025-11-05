@@ -1,0 +1,106 @@
+* {
+    font-family: "JetBrains Mono", "Material Design Icons", FontAwesome, sans-serif;
+    background-image: none;
+    transition: all 0.4s ease;
+    font-size: 14px;
+}
+
+window {
+    background-color: rgba(46, 52, 64, 0.9);
+}
+
+button {
+    background-color: transparent;
+    color: #d8dee9;
+    border: 2px solid rgba(76, 86, 106, 0.6);
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px;
+    min-width: 140px;
+    min-height: 140px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 30%;
+    transition: color 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+}
+
+button:hover {
+    background-color: #4c566a;
+    border-color: #5E81AC;
+    color: #eceff4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#lock { 
+    color: #a3be8c;
+    border-color: rgba(163, 190, 140, 0.4);
+    background-image: url("/usr/share/wlogout/icons/lock.png");
+}
+
+#logout { 
+    color: #ebcb8b;
+    border-color: rgba(235, 203, 139, 0.4);
+    background-image: url("/usr/share/wlogout/icons/logout.png");
+}
+
+#suspend { 
+    color: #d8dee9;
+    border-color: rgba(216, 222, 233, 0.4);
+    background-image: url("/usr/share/wlogout/icons/suspend.png");
+}
+
+#hibernate { 
+    color: #5E81AC;
+    border-color: rgba(94, 129, 172, 0.4);
+    background-image: url("/usr/share/wlogout/icons/hibernate.png");
+}
+
+#reboot { 
+    color: #d8dee9;
+    border-color: rgba(216, 222, 233, 0.4);
+    background-image: url("/usr/share/wlogout/icons/reboot.png");
+}
+
+#shutdown { 
+    color: #bf616a;
+    border-color: rgba(191, 97, 106, 0.4);
+    background-image: url("/usr/share/wlogout/icons/shutdown.png");
+}
+
+#lock:hover { 
+    background-color: rgba(163, 190, 140, 0.2);
+    border-color: #a3be8c;
+    color: #a3be8c;
+}
+
+#logout:hover { 
+    background-color: rgba(235, 203, 139, 0.2);
+    border-color: #ebcb8b;
+    color: #ebcb8b;
+}
+
+#suspend:hover { 
+    background-color: #4c566a;
+    border-color: #5E81AC;
+    color: #eceff4;
+}
+
+#hibernate:hover { 
+    background-color: rgba(94, 129, 172, 0.2);
+    border-color: #5E81AC;
+    color: #5E81AC;
+}
+
+#reboot:hover { 
+    background-color: #4c566a;
+    border-color: #5E81AC;
+    color: #eceff4;
+}
+
+#shutdown:hover { 
+    background-color: rgba(191, 97, 106, 0.2);
+    border-color: #bf616a;
+    color: #bf616a;
+}

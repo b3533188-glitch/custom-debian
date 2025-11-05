@@ -1,0 +1,11 @@
+[Unit]
+Description=Run system updater every 6 hours
+Requires=system-updater.service
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=6h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

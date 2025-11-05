@@ -1,0 +1,15 @@
+[Unit]
+Description=Automatic Package Synchronization
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=%i
+Environment=HOME=/home/%i
+ExecStart=/home/me/Documents/backup-repositories/debian/scripts/sync-packages.sh check
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

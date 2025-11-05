@@ -1,0 +1,116 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 35,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": [],
+    "modules-right": ["tray", "custom/idle-inhibitor", "custom/system-monitor", "custom/updates", "custom/backup", "network", "pulseaudio", "battery", "clock", "custom/swaync", "custom/power"],
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": false,
+        "format": "{name}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10"
+        }
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+    "custom/idle-inhibitor": {
+        "return-type": "json",
+        "format": "{}",
+        "exec": "$HOME/.config/waybar/scripts/toggle-idle.sh",
+        "on-click": "$HOME/.config/waybar/scripts/toggle-idle.sh --toggle && pkill -RTMIN+8 waybar",
+        "interval": 300,
+        "signal": 8,
+        "tooltip": true
+    },
+    "custom/swaync": {
+        "return-type": "json",
+        "exec-if": "pgrep swaync",
+        "exec": "COUNT=$(swaync-client -c); if [ \"$(swaync-client --get-dnd)\" = \"true\" ]; then echo '{\"text\": \"\", \"class\": \"dnd\", \"tooltip\": \"Do Not Disturb\"}'; elif [ \"$COUNT\" -gt 0 ]; then echo \"{\\\"text\\\": \\\"$COUNT \\\", \\\"class\\\": \\\"has-notifications\\\", \\\"tooltip\\\": \\\"$COUNT Notifications\\\"}\"; else echo '{\"text\": \"0 \", \"class\": \"no-notifications\", \"tooltip\": \"No new notifications\"}'; fi",
+        "on-click": "swaync-client -t",
+        "interval": 1,
+        "signal": 9
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": " Disconnected",
+        "format-alt": " {bandwidthDownBits}  {bandwidthUpBits}",
+        "tooltip-format": "{ipaddr}/{cidr} via {gateway}",
+        "interval": 3
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": " Muted",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "tooltip": false
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%A, %d %B}",
+        "tooltip-format": "<b>Today: {:%A, %d %B %Y}</b>\n<tt>{calendar}</tt>"
+    },
+    "custom/system-monitor": {
+        "exec": "$HOME/.config/waybar/scripts/system-monitor.sh waybar",
+        "return-type": "json",
+        "interval": 5,
+        "tooltip": true,
+        "format": "{}",
+        "format-alt": "{alt}",
+        "on-click": "$HOME/.config/waybar/scripts/system-monitor.sh toggle && pkill -RTMIN+10 waybar",
+        "signal": 10
+    },
+    "custom/updates": {
+        "exec": "$HOME/.config/waybar/scripts/check-updates.sh waybar",
+        "return-type": "json",
+        "interval": 1800,
+        "on-click": "$HOME/.config/waybar/scripts/run-updates.sh && pkill -RTMIN+11 waybar",
+        "signal": 11,
+        "tooltip": true
+    },
+    "custom/backup": {
+        "exec": "$HOME/.config/waybar/scripts/backup-status.sh",
+        "return-type": "json",
+        "interval": 60,
+        "on-click": "$HOME/.config/waybar/scripts/run-backup.sh",
+        "signal": 12,
+        "tooltip": true
+    },
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}

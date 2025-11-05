@@ -1,0 +1,13 @@
+[Unit]
+Description=System Updater Daemon (runs 24/7)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/system-updater-daemon.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=default.target

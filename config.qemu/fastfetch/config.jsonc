@@ -1,0 +1,112 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "auto",
+        "padding": {
+            "top": 1,
+            "left": 2
+        }
+    },
+    "display": {
+        "separator": " → ",
+        "color": {
+            "keys": "blue",
+            "title": "cyan"
+        }
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "╭─────────────────────────────────────────╮"
+        },
+        {
+            "type": "title",
+            "format": "│ {user-name}@{host-name}",
+            "color": {
+                "user": "blue",
+                "at": "white",
+                "host": "blue"
+            }
+        },
+        {
+            "type": "custom",
+            "format": "├─────────────────────────────────────────┤"
+        },
+        {
+            "type": "os",
+            "key": "│ OS",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "│ Kernel",
+            "keyColor": "blue"
+        },
+        {
+            "type": "packages",
+            "key": "│ Packages",
+            "keyColor": "blue"
+        },
+        {
+            "type": "shell",
+            "key": "│ Shell",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wm",
+            "key": "│ WM",
+            "keyColor": "blue"
+        },
+        {
+            "type": "wmtheme",
+            "key": "│ Theme",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "│ Terminal",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": "├─────────────────────────────────────────┤"
+        },
+        {
+            "type": "cpu",
+            "key": "│ CPU",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "│ Memory",
+            "keyColor": "green"
+        },
+        {
+            "type": "disk",
+            "key": "│ Disk (/)",
+            "keyColor": "green"
+        },
+        {
+            "type": "custom",
+            "format": "├─────────────────────────────────────────┤"
+        },
+        {
+            "type": "uptime",
+            "key": "│ Uptime",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": "├─────────────────────────────────────────┤"
+        },
+        {
+            "type": "colors",
+            "key": "│ Colors",
+            "symbol": "circle"
+        },
+        {
+            "type": "custom",
+            "format": "╰─────────────────────────────────────────╯"
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+window.notification-center {
+    background: rgba(46, 52, 64, 0.7);
+    border-radius: 0px;
+    border: none;
+}
+
+.control-center {
+    border-radius: 0;
+    background-color: rgba(46, 52, 64, 0.7);
+}
+
+window.notification-window {
+    background: rgba(46, 52, 64, 0.7);
+}
+
+.notification-center,
+.notification-window {
+    font-family: "JetBrains Mono", sans-serif;
+}
+
+.widget, .notification, .notification-content, .close-button, button, switch, slider {
+    border-radius: 0;
+}
+
+.widget-title {
+    font-size: 20px;
+    color: #eceff4;
+    margin: 10px;
+}
+
+.widget-title button {
+    background-color: #4c566a;
+    color: #d8dee9;
+    border: 1px solid #5E81AC;
+}
+
+.widget-title button:hover {
+    background-color: #5E81AC;
+}
+
+.widget-dnd {
+    margin: 10px;
+}
+
+.widget-dnd switch {
+    background-color: #4c566a;
+}
+
+.widget-dnd switch slider {
+    background-color: #d8dee9;
+    border: 1px solid #2e3440;
+}
+
+.widget-dnd switch:checked {
+    background-color: #bf616a;
+}
+
+.notification {
+    background-color: #3b4252;
+    border: 1px solid #4c566a;
+    margin: 5px 10px;
+}
+
+.notification:hover {
+    background-color: #5E81AC;
+}
+
+.notification-header {
+    font-weight: bold;
+    color: #eceff4;
+}
+
+.notification-body {
+    color: #d8dee9;
+}
+
+.notification-action {
+    background-color: #5E81AC;
+    color: #eceff4;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.notification-action:hover {
+    background-color: #81A1C1;
+}
+
+.close-button {
+    background-color: #bf616a;
+    color: #eceff4;
+}
+
+.close-button:hover {
+    background-color: #d08770;
+}

@@ -1,0 +1,195 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", "Material Design Icons", FontAwesome, sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(46, 52, 64, 0.95);
+    color: #d8dee9;
+    transition: background-color 0.5s;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #d8dee9;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: #4c566a;
+}
+
+/* Hover effect for all main waybar modules */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#network:hover,
+#tray:hover,
+#custom-power:hover,
+#custom-swaync:hover,
+#custom-idle-inhibitor:hover,
+#window:hover {
+    background-color: rgba(136, 192, 208, 0.2);
+}
+
+#workspaces button.focused {
+    color: #eceff4;
+    background-color: #5E81AC;
+}
+
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray,
+#custom-power,
+#custom-swaync,
+#custom-idle-inhibitor,
+#custom-system-monitor,
+#window {
+    padding: 0 10px;
+    margin: 3px 2px;
+    transition: color 0.4s ease, background-color 0.4s ease;
+}
+
+#clock {
+    color: #d8dee9;
+}
+
+#battery {
+    color: #a3be8c;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #a3be8c;
+}
+
+#battery.warning:not(.charging) {
+    color: #ebcb8b;
+}
+
+#battery.critical:not(.charging) {
+    color: #bf616a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #bf616a;
+        color: #eceff4;
+    }
+}
+
+#pulseaudio {
+    color: #d8dee9;
+}
+
+#pulseaudio.muted {
+    color: #616E88;
+}
+
+#network {
+    color: #d8dee9;
+}
+
+#network.disconnected {
+    color: #bf616a;
+}
+
+#custom-swaync.no-notifications {
+    color: #a3be8c;
+}
+
+#custom-swaync.has-notifications {
+    color: #ebcb8b;
+}
+
+#custom-swaync.dnd {
+    color: #bf616a;
+}
+
+#custom-idle-inhibitor {
+    padding: 0 12px 0 8px;
+}
+
+#custom-idle-inhibitor.active {
+    color: #ffffff;
+}
+
+#custom-idle-inhibitor.inhibited {
+    color: #a3be8c;
+}
+
+#custom-power {
+    color: #bf616a;
+    margin-right: 5px;
+}
+
+#window {
+    font-weight: bold;
+    color: #eceff4;
+}
+
+#custom-updates {
+    color: #88c0d0;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-updates.updates-available {
+    color: #ebcb8b;
+    background-color: rgba(235, 203, 139, 0.1);
+}
+
+#custom-updates.up-to-date {
+    color: #a3be8c;
+}
+
+#custom-updates:hover {
+    background-color: rgba(136, 192, 208, 0.2);
+}
+
+/* Force monospace font for numbers */
+#custom-system-monitor,
+#custom-updates {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+/* Emoji support for specific elements that need it */
+.emoji-support {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", "Material Design Icons", FontAwesome, "Noto Emoji", "Symbola", sans-serif;
+}
+
+/* System Monitor Styles */
+#custom-system-monitor {
+    color: #88c0d0;
+    padding: 0 8px;
+    transition: all 0.3s ease;
+}
+
+#custom-system-monitor.normal {
+    color: #d8dee9;
+}
+
+#custom-system-monitor.warning {
+    color: #ebcb8b;
+    background-color: rgba(235, 203, 139, 0.1);
+}
+
+#custom-system-monitor.critical {
+    color: #bf616a;
+    background-color: rgba(191, 97, 106, 0.1);
+}
+
+#custom-system-monitor:hover {
+    background-color: rgba(136, 192, 208, 0.2);
+}
