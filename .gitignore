@@ -1,6 +1,9 @@
 # Claude Code documentation - local development only
 CLAUDE.md
 
+# Node.js dependencies
+node_modules/
+
 # Log files
 *.log
 
