@@ -266,10 +266,22 @@ setup_user_systemd_session() {
     # Reload systemd user daemon
     su - "$SUDO_USER" -c "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR systemctl --user daemon-reload" 2>/dev/null || true
 
-    # Enable and start all daemon services
+    # Stop and disable sway-wallpaper service (now managed by Sway config)
+    info "Stopping sway-wallpaper.service (now managed by Sway config)..."
+    su - "$SUDO_USER" -c "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR systemctl --user stop sway-wallpaper.service" 2>/dev/null || true
+    su - "$SUDO_USER" -c "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR systemctl --user disable sway-wallpaper.service" 2>/dev/null || true
+
+    # Enable and start all daemon services (except sway-wallpaper)
     for service in "$SYSTEMD_USER_DIR"/*.service; do
         if [ -f "$service" ]; then
             service_name=$(basename "$service")
+
+            # Skip sway-wallpaper.service (managed by Sway config)
+            if [ "$service_name" = "sway-wallpaper.service" ]; then
+                info "Skipping $service_name (managed by Sway config)"
+                continue
+            fi
+
             info "Enabling and starting $service_name..."
             su - "$SUDO_USER" -c "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR systemctl --user enable $service_name" 2>/dev/null || true
             su - "$SUDO_USER" -c "XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR systemctl --user start $service_name" 2>/dev/null || true
