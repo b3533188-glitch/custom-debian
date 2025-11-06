@@ -19,7 +19,7 @@ exec swayosd-server
 exec lxpolkit
 exec /opt/Mullvad\ VPN/mullvad-vpn
 exec $HOME/.config/sway/scripts/initial-wallpaper.sh
-exec $HOME/.local/bin/sway-wallpaper-daemon.sh
+exec $HOME/.local/bin/sway-wallpaper-daemon.sh &
 # Autostart system applets (only if available)
 exec_always --no-startup-id 'command -v nm-applet && nm-applet --indicator'
 exec_always --no-startup-id 'command -v blueman-applet && blueman-applet'
